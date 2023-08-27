@@ -1,0 +1,11 @@
+member_id,first_name,last_name,email,dob,phone
+1,Sarah,Johnson,sarah.johnson@example.com,20-08-2004,0461478099
+2,Emily,Jones,emily.jones@example.com,31-03-2002,0432492546
+3,Sarah,Williams,sarah.williams@example.com,01-04-1975,0440481346
+4,Sarah,Smith,sarah.smith@example.com,15-06-2006,0423452404
+5,Sarah,Brown,sarah.brown@example.com,08-08-2000,0445909622
+6,John,Brown,john.brown@example.com,11-12-2002,0423958565
+7,John,Johnson,john.johnson@example.com,31-01-2006,0496713871
+8,Michael,Brown,michael.brown@example.com,17-05-1980,0485230309
+9,Michael,Smithy,michael.smithy@example.com,06-03-2000,0495651549
+10,Sarah,Williams,sarah.williams@example.com,25-04-2010,0434782260

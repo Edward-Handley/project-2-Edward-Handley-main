@@ -1,0 +1,41 @@
+body {
+    background-color: slategrey;
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+}
+
+.icon-container {
+    margin: 0 20px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.icon-container i {
+    font-size: 5em; 
+}
+
+.icon-container p {
+    font-size: 1.5em; 
+    margin-top: 10px;
+}
+
+
+.header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.header img {
+    width: 100px;
+    height: 100px;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin-top: 10px;
+}
