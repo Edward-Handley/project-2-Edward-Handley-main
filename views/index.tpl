@@ -15,7 +15,7 @@
     </div>
     <div class="container">
         <div class="icon-container">
-            <i class="fas fa-users"></i>
+            <i class="fas fa-users" id="team-icon"></i>
             <p>Team Data</p>
         </div>
     

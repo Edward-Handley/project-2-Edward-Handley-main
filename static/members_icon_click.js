@@ -5,4 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('members-icon').addEventListener('click', function() {
     window.location.href = '/members';  // Redirect to the Members page
   });
+
+  // Add click event to the icon with id 'members-icon'
+  document.getElementById('team-icon').addEventListener('click', function() {
+    window.location.href = '/team';  // Redirect to the Members page
+  });
 });
+
+

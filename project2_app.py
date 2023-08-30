@@ -1,4 +1,3 @@
-
 from bottle import route, run, template, request, static_file
 import sqlite3
 import scripts.create_database as create_database
@@ -43,13 +42,33 @@ def player_data():
 def player_data():
     return template('training_data')
 
-@route('/search_members', method='GET')
+###Hard Coded Queries###
+@route('/members_and_teams')
+def members_and_teams():
+    query = queries.SELECT_MEMBERS_AND_TEAMS
+    title = 'Members and Their Teams'
+    description = 'This page shows all members and their respective teams.'
+    return get_template(query, title, description)
+
+
+###Dyanmic Queries###
+@route('/search_members')
 def search_members():
-    import queries  # Lazy import to avoid circular dependency
-    search_field = request.query.get('search_field')
-    search_query = request.query.get('search_query')
-    results = queries.search_members(search_field, search_query)
-    return template('member_data.tpl', members=results)
+    return template('member_data')
+
+@route('/search_members', method="POST")
+def search_members_post():
+    member_name = request.forms.get('member_name')
+    values = {'first_name': member_name}
+
+    title = f'Search Results for {member_name}'
+    description = f'This page shows the results of a search for {member_name}'
+    query = queries.SEARCH_MEMBERS
+    try:
+        return get_template_with_parameters(query, values, title, description)
+    except Exception as e:
+        return f"An error occurred: {str(e)}"
+
 
 
 
@@ -92,6 +111,12 @@ def static(filename):
     return static_file(filename, root='./static')
 
 run(host='localhost', port=8080, debug=True, reloader=True)
+
+
+
+
+
+
 # Updated route to handle the new search form
 
 # Route to handle search queries for members

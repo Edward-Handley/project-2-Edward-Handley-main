@@ -20,17 +20,10 @@
     <!-- Main Content -->
     <main>
 
-    <form action="/search_members" method="get">
-      <label for="search_field">Search By:</label>
-        <select name="search_field" id="search_field">
-          <option value="first_name">First Name</option>
-          <option value="last_name">Last Name</option>
-          <option value="email">Email</option>
-          <option value="phone">Phone</option>
-        </select>
-        <input type="text" name="search_query" placeholder="Search for a member...">
-      <button type="submit">Search</button>
-    </form>
+    <form action="/search_members" method="post">
+        Enter the name: <input type="text" name="member_name" /><br />
+        <input type="submit">
+    </form> 
 
         <!-- Section 2: Add New Members -->
         <div class="add-member-section">
