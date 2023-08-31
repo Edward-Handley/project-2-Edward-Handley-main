@@ -3,41 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Teams Page</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-            }
-            header {
-                background-color: #333;
-                color: white;
-                text-align: center;
-                padding: 1em;
-            }
-            nav {
-                text-align: center;
-                background-color: #444;
-            }
-            nav a {
-                padding: 14px 20px;
-                display: inline-block;
-                color: white;
-                text-decoration: none;
-            }
-            nav a:hover {
-                background-color: #555;
-            }
-            .container {
-                padding: 20px;
-            }
-            .feature-box {
-                border: 1px solid #ccc;
-                padding: 16px;
-                margin: 16px;
-                text-align: center;
-            }
-        </style>
+        <link rel="stylesheet" href="/static/team_page.css">
     </head>
         <body>
 
@@ -46,9 +12,7 @@
         </header>
 
         <nav>
-            <a href="#">Home</a>
-            <a href="#">Profile</a>
-            <a href="#">Settings</a>
+            <a href="/">Home</a>
         </nav>
 
         <div class="container">

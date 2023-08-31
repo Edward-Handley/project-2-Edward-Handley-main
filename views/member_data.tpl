@@ -14,7 +14,8 @@
 
     <!-- Navigation -->
     <nav>
-        <!-- Navigation links can go here -->
+      
+        <a href="/">Home</a>   
     </nav>
 
     <!-- Main Content -->
