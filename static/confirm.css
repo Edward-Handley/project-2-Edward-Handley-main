@@ -34,43 +34,52 @@ header a, footer a {
 }
 
 /* Tick Animation */
-.tick {
+/* Tick Animation */
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .tick-container {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin: auto;
+  }
+  
+  .tick-circle {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    position: relative;
     border: 10px solid #333;
     border-top-color: transparent;
-    margin: auto;
-    animation: spin 2s linear infinite;
-}
-
-.tick::after, .tick::before {
-    content: '';
     position: absolute;
-    background: #333;
-}
-
-.tick::after {
-    width: 60%;
-    height: 10px;
+    animation: spin 5s linear infinite;
+  }
+  
+  .fa-check {
+    position: absolute;
     top: 50%;
-    left: 10%;
-    transform: rotate(45deg);
-}
-
-.tick::before {
-    width: 30%;
-    height: 10px;
-    top: 50%;
-    left: 10%;
-    transform: rotate(-45deg);
-}
-
-/* Stops animation to show the tick */
-.tick.stop {
+    left: 50%;
+    font-size: 40px;
+    color: #333;
+    transform: translate(-50%, -50%);
+    opacity: 0; /* Hidden initially */
+  }
+  
+  .tick-stop .tick-circle {
     animation-play-state: paused;
-}
+    border-top-color: #333;
+  }
+  
+  .tick-stop .fa-check {
+    opacity: 1; /* Show the tick icon */
+  }
+  
 
 /* Venue Form Container */
 .venue-form-container {
@@ -119,4 +128,8 @@ header a, footer a {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+
+.hidden {
+    display: none;
 }

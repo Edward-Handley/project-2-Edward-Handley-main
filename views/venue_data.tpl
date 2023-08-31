@@ -50,7 +50,7 @@
                 <input type="submit" value="Add Venue" class="venue-form-submit">
             </form>
         </div>
-
+        <a href="/test_confirmation">Test Confirmation Page</a>
 
         </body>
 </html>

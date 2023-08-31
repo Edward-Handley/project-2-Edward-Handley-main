@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Confirmation</title>
     <link rel="stylesheet" href="/static/confirm.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 <body>
 
@@ -11,21 +12,19 @@
     <p><a href="/">Return to Home Page</a></p>
 </header>
 
-<div class="container">
-    <h1>{{ title }}</h1>
-    <p>{{ message }}</p>
-
-    <!-- Tick Animation -->
-    <div class="confirmation-container">
-        <div class="tick stop"></div>
+  <!-- ... -->
+  <div class="confirmation-container">
+    <div class="tick-container">
+      <div class="tick-circle"></div>
+      <i class="fas fa-check"></i> <!-- Font Awesome tick icon -->
     </div>
+  </div>
+  <!-- ... -->
 
-    <a href="{{ return_url }}">Go Back</a>
-</div>
 
 <footer>
     <p><a href="/">Return to Home Page</a></p>
 </footer>
-
+<script src="/static/tick.js"></script>
 </body>
 </html>

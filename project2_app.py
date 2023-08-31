@@ -95,6 +95,11 @@ def add_venue():
 
     return template('conformation', title="Venue Added Successfully", message="Your new venue has been added to the database.", return_url="/venue")
 
+###DELETE LATER - TESTING ONLY###
+# Test route for confirmation page
+@route('/test_confirmation')
+def test_confirmation():
+    return template('conformation', title="Test Confirmation", message="This is a test confirmation message.", return_url="/venue")
 
 
 ########################################################
