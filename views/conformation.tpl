@@ -22,9 +22,7 @@
   <!-- ... -->
 
 
-<footer>
-    <p><a href="/">Return to Home Page</a></p>
-</footer>
+
 <script src="/static/tick.js"></script>
 </body>
 </html>
