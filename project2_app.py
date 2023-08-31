@@ -93,7 +93,8 @@ def add_venue():
     conn.commit()
     conn.close()
 
-    return "Venue added successfully. <a href='/venue'>Go Back to Venues Page</a>"
+    return template('conformation', title="Venue Added Successfully", message="Your new venue has been added to the database.", return_url="/venue")
+
 
 
 ########################################################

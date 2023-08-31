@@ -1,0 +1,122 @@
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header, footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+header a, footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Confirmation Container */
+.confirmation-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Tick Animation */
+.tick {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: relative;
+    border: 10px solid #333;
+    border-top-color: transparent;
+    margin: auto;
+    animation: spin 2s linear infinite;
+}
+
+.tick::after, .tick::before {
+    content: '';
+    position: absolute;
+    background: #333;
+}
+
+.tick::after {
+    width: 60%;
+    height: 10px;
+    top: 50%;
+    left: 10%;
+    transform: rotate(45deg);
+}
+
+.tick::before {
+    width: 30%;
+    height: 10px;
+    top: 50%;
+    left: 10%;
+    transform: rotate(-45deg);
+}
+
+/* Stops animation to show the tick */
+.tick.stop {
+    animation-play-state: paused;
+}
+
+/* Venue Form Container */
+.venue-form-container {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Venue Form Title */
+.venue-form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Venue Form */
+.venue-form {
+    max-width: 400px;
+    margin: auto;
+}
+
+/* Venue Form Group */
+.venue-form-group {
+    margin-bottom: 20px;
+}
+
+/* Venue Form Label */
+.venue-form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+/* Venue Form Input */
+.venue-form-group input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+/* Venue Form Submit Button */
+.venue-form-submit {
+    background-color: #333;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
