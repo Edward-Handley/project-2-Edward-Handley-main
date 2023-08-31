@@ -30,11 +30,11 @@
         <div class="add-member-section">
             <h1>Add New Member</h1>
             <form action="/add_member" method="post" id="add-member-form">
-                <input type="text" name="first_name" placeholder="First Name" required>
-                <input type="text" name="last_name" placeholder="Last Name" required>
-                <input type="date" name="dob" placeholder="DOB" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="tel" name="phone" placeholder="Phone" required>
+                <input type="text" name="first_name" id="first_name" placeholder="First Name" required>
+                <input type="text" name="last_name" id="last_name" placeholder="Last Name" required>
+                <input type="date" name="dob" id="dob" placeholder="DOB" required>
+                <input type="email" name="email" id="Email" placeholder="Email" required>
+                <input type="tel" name="phone" id="phone" placeholder="Phone" required>
                 <button type="submit" id="add-button">Add Member</button>
             </form>
         </div>

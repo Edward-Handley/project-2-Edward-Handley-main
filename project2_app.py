@@ -77,6 +77,7 @@ def search_members_post():
         return f"An error occurred: {str(e)}"
 
 ###Add new to DB###
+#Add Venue
 @route('/add_venue', method='POST')
 def add_venue():
     name = request.forms.get('name')
@@ -94,6 +95,27 @@ def add_venue():
     conn.close()
 
     return template('conformation', title="Venue Added Successfully", message="Your new venue has been added to the database.", return_url="/venue")
+
+#Add Member
+@route('/add_member', method='POST')
+def add_member():
+    first_name = request.forms.get('first_name')
+    last_name = request.forms.get('last_name')
+    email = request.forms.get('email')
+    dob = request.forms.get('dob')
+    phone = request.forms.get('phone')
+    
+
+    conn = sqlite3.connect(DATABASE_FILE)
+    cursor = conn.cursor()
+
+    cursor.execute("INSERT INTO Members (first_name, last_name, email, dob, phone) VALUES (?, ?, ?, ?, ?)",
+                   (first_name, last_name, email, dob, phone))
+
+    conn.commit()
+    conn.close()
+
+    return template('conformation', title="Member Added Succesfully", message="Your new member has been added to the database.", return_url="/member_data")
 
 ###DELETE LATER - TESTING ONLY###
 # Test route for confirmation page
