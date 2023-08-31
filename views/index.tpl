@@ -25,8 +25,8 @@
         </div>
 
         <div class="icon-container">
-            <i class="fas fa-futbol"></i>
-            <p>Player Data</p>
+            <i class="fas fa-futbol" id="venue-icon"></i>
+            <p>Venue Data</p>
         </div>
         <div class="icon-container">
             <i class="fas fa-running"></i>

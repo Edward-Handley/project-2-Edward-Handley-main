@@ -10,6 +10,11 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('team-icon').addEventListener('click', function() {
     window.location.href = '/team';  // Redirect to the Members page
   });
+
+  document.getElementById('venue-icon').addEventListener('click', function() {
+    window.location.href = '/venue';  // Redirect to the Members page
+  });
+
 });
 
 

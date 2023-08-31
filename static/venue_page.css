@@ -1,0 +1,83 @@
+/* Venue Form Container */
+.venue-form-container {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Venue Form Title */
+.venue-form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Venue Form */
+.venue-form {
+    max-width: 400px;
+    margin: auto;
+}
+
+/* Venue Form Group */
+.venue-form-group {
+    margin-bottom: 20px;
+}
+
+/* Venue Form Label */
+.venue-form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+/* Venue Form Input */
+.venue-form-group input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+/* Venue Form Submit Button */
+.venue-form-submit {
+    background-color: #333;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+nav {
+    text-align: center;
+    background-color: #444;
+}
+nav a {
+    padding: 14px 20px;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+}
+nav a:hover {
+    background-color: #555;
+}
+.container {
+    padding: 20px;
+}
+.feature-box {
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin: 16px;
+    text-align: center;
+}

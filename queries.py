@@ -8,3 +8,5 @@ SELECT_MEMBERS_AND_TEAMS = '''SELECT Members.first_name, Members.last_name, Team
                               JOIN Players ON Members.member_id = Players.member_id 
                               JOIN Teams ON Players.team_id = Teams.team_id
                               ORDER BY team_name'''
+
+ALL_VENUES = 'SELECT * FROM Venues'

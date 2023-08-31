@@ -16,13 +16,13 @@ div {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Headings */
-h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
-    align: center;
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
 }
+/* Headings */
 
 /* Form styles */
 form {

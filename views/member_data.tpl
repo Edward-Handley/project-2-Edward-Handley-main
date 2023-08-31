@@ -9,7 +9,7 @@
 
     <!-- Header -->
     <header>
-        <h1>Club Waterpolo Management</h1>
+        <h1>Members Page</h1>
     </header>
 
     <!-- Navigation -->
