@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>Teams Page</title>
         <link rel="stylesheet" href="/static/venue_page.css">
+        <link rel="stylesheet"  href="/static/navbar.css">
         
     </head>
         <body>
@@ -12,9 +13,17 @@
             <h1>Venues Page</h1>
         </header>
 
-        <nav>
-            <a href="/">Home</a>
-        </nav>
+        <div class="universal-navbar">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/members">Members</a></li>
+                    <li><a href="/team">Teams</a></li>
+                    <li><a href="/venue">Venues</a></li>
+                    <li><a href="/trainings">Trainings</a></li>
+                </ul>
+            </nav>
+         </div>
 
         <div class="container">
             <div class="feature-box">

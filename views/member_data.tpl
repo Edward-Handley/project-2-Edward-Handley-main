@@ -4,6 +4,7 @@
 <head>
     <title>Members Page</title>
     <link rel="stylesheet" href="/static/members_page.css">
+    <link rel="stylesheet"  href="/static/navbar.css">
 </head>
 <body>
 
@@ -12,19 +13,33 @@
         <h1>Members Page</h1>
     </header>
 
-    <!-- Navigation -->
-    <nav>
-      
-        <a href="/">Home</a>   
-    </nav>
+    <div class="universal-navbar">
+        <nav class="navbar">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/members">Members</a></li>
+                <li><a href="/team">Teams</a></li>
+                <li><a href="/venue">Venues</a></li>
+                <li><a href="/trainings">Trainings</a></li>
+            </ul>
+        </nav>
+    </div>
+    
 
     <!-- Main Content -->
     <main>
 
-    <form action="/search_members" method="post">
-        Enter the name: <input type="text" name="member_name" /><br />
-        <input type="submit">
-    </form> 
+    <!-- Search Section -->
+        <!-- Search Card -->
+        <div class="search-card">
+            <h2>Search Members</h2>
+            <form action="/search_members" method="post">
+                <input type="text" name="member_name" placeholder="Enter the name to search..." />
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+
 
         <!-- Section 2: Add New Members -->
         <div class="add-member-section">

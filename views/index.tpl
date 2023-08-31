@@ -14,18 +14,16 @@
         <h1>UWA Waterpolo Club Database</h1>
     </div>
     <div class="container">
-        <div class="icon-container">
-            <i class="fas fa-users" id="team-icon"></i>
+        <div class="icon-container" id="team-icon">
+            <i class="fas fa-users"></i>
             <p>Team Data</p>
         </div>
-    
-        <div class="icon-container">
-            <i class="fas fa-id-badge" id="members-icon"></i>
+        <div class="icon-container" id="members-icon">
+            <i class="fas fa-id-badge"></i>
             <p>Members Data</p>
         </div>
-
-        <div class="icon-container">
-            <i class="fas fa-futbol" id="venue-icon"></i>
+        <div class="icon-container" id="venue-icon">
+            <i class="fas fa-futbol"></i>
             <p>Venue Data</p>
         </div>
         <div class="icon-container">
@@ -33,6 +31,5 @@
             <p>Training Data</p>
         </div>
     </div>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>

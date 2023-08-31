@@ -8,7 +8,7 @@ body {
 }
 
 /* Container */
-div {
+div:not(.universal-navbar) {
     margin: 20px;
     padding: 20px;
     border-radius: 8px;
@@ -30,6 +30,13 @@ form {
     flex-direction: column;
 }
 
+
+.add-member-section h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
 input {
     margin-bottom: 10px;
     padding: 10px;
@@ -52,16 +59,36 @@ button:hover {
     background-color: #0056b3;
 }
 
-nav {
+head {
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Search Card Styles */
+/* Search Card Styles */
+/* Search Card Styles */
+.search-card {
+    box-sizing: border-box;  /* Includes padding in the total width */
+    width: calc(100% - 40px);  /* Full width minus the left and right padding */
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    background-color: #444;
+    margin-bottom: 20px;
 }
-nav a {
-    padding: 14px 20px;
-    display: inline-block;
-    color: white;
-    text-decoration: none;
+
+.search-card h2 {
+    margin-bottom: 20px;
 }
-nav a:hover {
-    background-color: #555;
+
+.search-card input {
+    width: 80%;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.search-card button {
+    padding: 11px 20px;
 }

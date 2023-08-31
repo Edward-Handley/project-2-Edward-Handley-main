@@ -32,7 +32,7 @@ def team_data():
 def members_data():
     return template('member_data')
 
-# Player Data
+# Venue Data
 @route('/venue')
 def player_data():
     return template('venue_data')

@@ -9,19 +9,7 @@ header {
     text-align: center;
     padding: 1em;
 }
-nav {
-    text-align: center;
-    background-color: #444;
-}
-nav a {
-    padding: 14px 20px;
-    display: inline-block;
-    color: white;
-    text-decoration: none;
-}
-nav a:hover {
-    background-color: #555;
-}
+
 .container {
     padding: 20px;
 }
