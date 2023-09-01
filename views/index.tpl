@@ -26,7 +26,7 @@
             <i class="fas fa-futbol"></i>
             <p>Venue Data</p>
         </div>
-        <div class="icon-container">
+        <div class="icon-container" id="training-icon">
             <i class="fas fa-running"></i>
             <p>Training Data</p>
         </div>

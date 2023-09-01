@@ -37,10 +37,23 @@ def members_data():
 def player_data():
     return template('venue_data')
 
-# Team Data
+# Training Data
 @route('/trainings')
-def player_data():
-    return template('training_data')
+def trainings_data():
+    # Connect to the database
+    conn = sqlite3.connect(DATABASE_FILE)
+    cursor = conn.cursor()
+
+    # Query to fetch all venues
+    cursor.execute("SELECT venue_id, name FROM Venues")
+    venues = cursor.fetchall()
+
+    # Close the connection
+    conn.close()
+
+    # Render the template and pass the venues to it
+    return template('training_data.tpl', venues=venues)
+
 
 ###Hard Coded Queries###
 @route('/members_and_teams')
@@ -116,6 +129,37 @@ def add_member():
     conn.close()
 
     return template('conformation', title="Member Added Succesfully", message="Your new member has been added to the database.", return_url="/member_data")
+
+#Add Trainings
+@route('/add_training', method='POST')
+def add_training():
+    date = request.forms.get('date')
+    time = request.forms.get('time')
+    coach = request.forms.get('coach')
+    venue_id = request.forms.get('venue_id')
+
+    conn = sqlite3.connect(DATABASE_FILE)
+    cursor = conn.cursor()
+
+    cursor.execute("INSERT INTO Trainings (date, time, venue_id, coach) VALUES (?, ?, ?, ?)",
+               (date, time, venue_id, coach))
+
+    conn.commit()
+    conn.close()
+
+    return template('conformation', title="Training Added Succesfully", message="Your new training has been added to the database.", return_url="/trainings")
+
+
+
+
+
+
+
+
+
+
+
+
 
 ###DELETE LATER - TESTING ONLY###
 # Test route for confirmation page
