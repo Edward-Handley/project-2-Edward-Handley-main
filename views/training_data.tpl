@@ -26,14 +26,27 @@
     </div>
     
     <!-- Main Content -->
-    <div class="container">
-
-        <!-- Training Card -->
-        <div class="training-card">
-            <h2>Upcoming Training Sessions</h2>
-            <!-- Placeholder for the training sessions table -->
-        </div>
-        
+    <div class="training-card">
+    <h2>Upcoming Training Sessions</h2>
+    <!-- Table for displaying the training sessions -->
+        <table>
+            <tr>
+                <th>Training ID</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Coach</th>
+                <th>Venue ID</th>
+            </tr>
+            % for training in training_sessions:
+            <tr>
+                <td>{{ training[0] }}</td>
+                <td>{{ training[1] }}</td>
+                <td>{{ training[2] }}</td>
+                <td>{{ training[3] }}</td>
+                <td>{{ training[4] }}</td>
+            </tr>
+            % end
+        </table>
     </div>
     <div class="add-training-section">
     <h1>Add New Training</h1>

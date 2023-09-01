@@ -10,3 +10,5 @@ SELECT_MEMBERS_AND_TEAMS = '''SELECT Members.first_name, Members.last_name, Team
                               ORDER BY team_name'''
 
 ALL_VENUES = 'SELECT * FROM Venues'
+
+SELECT_ONLY_TEAMS = "SELECT * FROM Teams"

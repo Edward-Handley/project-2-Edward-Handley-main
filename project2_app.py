@@ -48,11 +48,15 @@ def trainings_data():
     cursor.execute("SELECT venue_id, name FROM Venues")
     venues = cursor.fetchall()
 
+    # Query to fetch all trainings
+    cursor.execute("SELECT training_id, date, time, coach, venue_id FROM Trainings")
+    training_sessions = cursor.fetchall()
+
     # Close the connection
     conn.close()
 
     # Render the template and pass the venues to it
-    return template('training_data.tpl', venues=venues)
+    return template('training_data.tpl', venues=venues, training_sessions=training_sessions)
 
 
 ###Hard Coded Queries###
@@ -61,6 +65,13 @@ def members_and_teams():
     query = queries.SELECT_MEMBERS_AND_TEAMS
     title = 'Members and Their Teams'
     description = 'This page shows all members and their respective teams.'
+    return get_template(query, title, description)
+
+@route('/only_teams')
+def only_teams():
+    query = queries.SELECT_ONLY_TEAMS
+    title = 'Teams'
+    description = 'This page shows all teams.'
     return get_template(query, title, description)
 
 @route('/venues_summary')
@@ -88,6 +99,10 @@ def search_members_post():
         return get_template_with_parameters(query, values, title, description)
     except Exception as e:
         return f"An error occurred: {str(e)}"
+
+
+
+
 
 ###Add new to DB###
 #Add Venue
@@ -151,7 +166,7 @@ def add_training():
 
 
 
-
+##Display Data Straight Away##
 
 
 

@@ -34,9 +34,9 @@
 
             <!-- Add more feature boxes for additional functionalities -->
             <div class="feature-box">
-                <h2>Placeholder</h2>
-                <p>Description of another feature.</p>
-                <a href="#">Go to Feature</a>
+                <h2>All Teams</h2>
+                <p>See all teams.</p>
+                <a href="/only_teams">Go to All Teams</a>
             </div>
 
             <div class="feature-box">
