@@ -185,7 +185,39 @@ def add_training():
 
 
 
-##Display Data Straight Away##
+## Dashboard ##
+@route('/dashboard')
+def dashboard():
+    # Connect to the database
+    conn = sqlite3.connect(DATABASE_FILE)
+    cursor = conn.cursor()
+
+    # Fetch the total number of members
+    cursor.execute("SELECT COUNT(*) FROM Members")
+    total_members = cursor.fetchone()[0]
+
+    # Fetch the total number of teams
+    cursor.execute("SELECT COUNT(*) FROM Teams")
+    total_teams = cursor.fetchone()[0]
+
+    # Fetch the total number of venues
+    cursor.execute("SELECT COUNT(*) FROM Venues")
+    total_venues = cursor.fetchone()[0]
+
+    # Fetch the total number of training sessions
+    cursor.execute("SELECT COUNT(*) FROM Trainings")
+    total_trainings = cursor.fetchone()[0]
+
+    # Close the connection
+    conn.close()
+
+    # Return the statistics to the dashboard template
+    return template('dashboard.tpl', total_members=total_members, total_teams=total_teams,
+                    total_venues=total_venues, total_trainings=total_trainings)
+
+
+
+
 
 
 

@@ -30,6 +30,11 @@
             <i class="fas fa-running"></i>
             <p>Training Data</p>
         </div>
+        <div class="icon-container" id="dashboard-icon">
+            <i class="fas fa-tachometer-alt"></i>
+            <p>Dashboard</p>
+        </div>
     </div>
+    
 </body>
 </html>

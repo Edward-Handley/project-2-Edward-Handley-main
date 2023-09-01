@@ -17,6 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('training-icon').addEventListener('click', function() {
     window.location.href = '/trainings';  // Redirect to the Members page
   });
+  document.getElementById('dashboard-icon').addEventListener('click', function() {
+    window.location.href = '/dashboard';  // Redirect to the Members page
+  });
 
 });
 
