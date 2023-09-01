@@ -164,6 +164,25 @@ def add_training():
 
     return template('conformation', title="Training Added Succesfully", message="Your new training has been added to the database.", return_url="/trainings")
 
+# Add Team
+@route('/add_team', method='POST')
+def add_training():
+    name = request.forms.get('name')
+    age_group = request.forms.get('age-group')
+    division = request.forms.get('division')
+    
+
+    conn = sqlite3.connect(DATABASE_FILE)
+    cursor = conn.cursor()
+
+    cursor.execute("INSERT INTO Teams (name, age_group, division) VALUES (?, ?, ?)",
+               (name, age_group, division))
+
+    conn.commit()
+    conn.close()
+
+    return template('conformation', title="Team Added Succesfully", message="Your new team has been added to the database.", return_url="/team_data")
+
 
 
 ##Display Data Straight Away##

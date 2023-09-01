@@ -39,12 +39,26 @@
                 <a href="/only_teams">Go to All Teams</a>
             </div>
 
-            <div class="feature-box">
-                <h2>Placeholder</h2>
-                <p>Description of another feature.</p>
-                <a href="#">Go to Feature</a>
-            </div>
+            
         </div>
+        <div class="add-team-section">
+        <h1>Add New Team</h1>
+        <form action="/add_team" method="post" id="add-team-form">
+            <input type="name" name="name" id="name" placeholder="Team name" required>
+            <label for="age-group">Choose a age group:</label>
+            <select name="age-group" id="age-group">
+                <option value="U21">U21</option>
+                <option value="U18">U18</option>
+                <option value="Senior">Senior</option>
+            </select>
+            <!-- Drop-down for selecting venue -->
+            <label for="division">Choose a division:</label>
+            <select name="division" id="division">
+                <option value="Division 1">Division 1</option>
+                <option value="Division 2">Division 2</option>     
+            </select>
+            <button type="submit" id="add-button">Add Team</button>
+        </form>
 
         </body>
 </html>
