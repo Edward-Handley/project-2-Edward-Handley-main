@@ -32,3 +32,34 @@ header {
     font-size: 2em;
     font-weight: bold;
 }
+
+/* ... existing styles ... */
+
+/* ... existing styles ... */
+
+.special-row {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.special-container {
+    text-align: center;
+    padding: 20px;
+    margin: 20px auto;
+    background-color: #ccc;  /* Using a simpler background */
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    width: 40%;  /* Reducing the width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.special-container h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.special-container p {
+    font-size: 2em;
+    font-weight: bold;
+}

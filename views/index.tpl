@@ -34,6 +34,10 @@
             <i class="fas fa-tachometer-alt"></i>
             <p>Dashboard</p>
         </div>
+        <div class="icon-container" id="sponsor-icon">
+            <i class="fas fa-hand-holding-usd"></i>
+            <p>Sponsor Data</p>
+        </div>
     </div>
     
 </body>

@@ -18,7 +18,6 @@
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/members">Members</a></li>
-                    <li><a href="/team">Teams</a></li>
                     <li><a href="/venue">Venues</a></li>
                     <li><a href="/trainings">Trainings</a></li>
                 </ul>

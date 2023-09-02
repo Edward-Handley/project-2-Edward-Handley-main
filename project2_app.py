@@ -40,23 +40,28 @@ def player_data():
 # Training Data
 @route('/trainings')
 def trainings_data():
-    # Connect to the database
+   
     conn = sqlite3.connect(DATABASE_FILE)
     cursor = conn.cursor()
 
-    # Query to fetch all venues
+    
     cursor.execute("SELECT venue_id, name FROM Venues")
     venues = cursor.fetchall()
 
-    # Query to fetch all trainings
+    
     cursor.execute("SELECT training_id, date, time, coach, venue_id FROM Trainings")
     training_sessions = cursor.fetchall()
-
-    # Close the connection
+    
     conn.close()
 
     # Render the template and pass the venues to it
     return template('training_data.tpl', venues=venues, training_sessions=training_sessions)
+
+
+
+@route('/sponsor')
+def sponsors_data():
+    return template('sponsors')
 
 
 ###Hard Coded Queries###
@@ -79,6 +84,13 @@ def venues_and_info():
     query = queries.ALL_VENUES
     title = 'Venues and Their Info'
     description = 'This page shows the Venues and their info.'
+    return get_template(query, title, description)
+
+@route('/all_sponsors')
+def all_sponsors():
+    query = queries.ALL_SPONSORS
+    title = 'Sponsors'
+    description = 'This page shows all sponsors.'
     return get_template(query, title, description)
 
 
@@ -184,6 +196,26 @@ def add_training():
     return template('conformation', title="Team Added Succesfully", message="Your new team has been added to the database.", return_url="/team_data")
 
 
+# Add Sponsor
+@route('/add_sponsor', method='POST')
+def add_sponsor():
+    name = request.forms.get('name')
+    email = request.forms.get('email')
+    contribution_amount = request.forms.get('contribution_amount')
+
+    conn = sqlite3.connect(DATABASE_FILE)
+    cursor = conn.cursor()
+
+    cursor.execute("INSERT INTO Sponsors (name, email, contribution_amount) VALUES (?, ?, ?)",
+               (name, email, contribution_amount))
+
+    conn.commit()
+    conn.close()
+
+    return template('conformation', title="Sponsor Added Successfully", message="The new sponsor has been added to the database.", return_url="/sponsors")
+
+
+
 
 ## Dashboard ##
 @route('/dashboard')
@@ -192,50 +224,44 @@ def dashboard():
     conn = sqlite3.connect(DATABASE_FILE)
     cursor = conn.cursor()
 
-    # Fetch the total number of members
+    # Existing code for fetching members, teams, venues, and trainings
     cursor.execute("SELECT COUNT(*) FROM Members")
     total_members = cursor.fetchone()[0]
-
-    # Fetch the total number of teams
     cursor.execute("SELECT COUNT(*) FROM Teams")
     total_teams = cursor.fetchone()[0]
-
-    # Fetch the total number of venues
     cursor.execute("SELECT COUNT(*) FROM Venues")
     total_venues = cursor.fetchone()[0]
-
-    # Fetch the total number of training sessions
     cursor.execute("SELECT COUNT(*) FROM Trainings")
     total_trainings = cursor.fetchone()[0]
+
+    # Fetch the total number of sponsors
+    cursor.execute("SELECT COUNT(*) FROM Sponsors")
+    total_sponsors = cursor.fetchone()[0]
+
+    # Fetch the total amount of money from sponsors
+    cursor.execute("SELECT SUM(contribution_amount) FROM Sponsors")
+    total_sponsor_amount = cursor.fetchone()[0]
 
     # Close the connection
     conn.close()
 
     # Return the statistics to the dashboard template
-    return template('dashboard.tpl', total_members=total_members, total_teams=total_teams,
-                    total_venues=total_venues, total_trainings=total_trainings)
+    return template('dashboard.tpl', 
+                    total_members=total_members, 
+                    total_teams=total_teams,
+                    total_venues=total_venues, 
+                    total_trainings=total_trainings,
+                    total_sponsors=total_sponsors,
+                    total_sponsor_amount=total_sponsor_amount)
 
 
 
 
 
-
-
-
-
-
-
-
-
-###DELETE LATER - TESTING ONLY###
-# Test route for confirmation page
-@route('/test_confirmation')
-def test_confirmation():
-    return template('conformation', title="Test Confirmation", message="This is a test confirmation message.", return_url="/venue")
 
 
 ########################################################
-# Constant for the database file name
+
 def run_query(query):
     return run_query_with_parameters(query, {})
 
@@ -261,9 +287,6 @@ def get_template_with_parameters(query, values, title='Query Results', descripti
         page = template('no_results', title=title, description=description)
     return page
 
-
-
-# Function to get the database connection
 def get_db_connection():
     connection = sqlite3.connect(DATABASE_FILE)
     connection.row_factory = sqlite3.Row

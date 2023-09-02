@@ -20,6 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('dashboard-icon').addEventListener('click', function() {
     window.location.href = '/dashboard';  // Redirect to the Members page
   });
+  document.getElementById('sponsor-icon').addEventListener('click', function() {
+    window.location.href = '/sponsor';  // Redirect to the Members page
+  });
 
 });
 

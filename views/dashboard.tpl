@@ -47,7 +47,17 @@
             <h2>Total Trainings</h2>
             <p>{{ total_trainings }}</p>
         </div>
+        <div class="stat-box">
+        <h2>Total Sponsors</h2>
+        <p>{{ total_sponsors }}</p>
+    
     </div>
+    </div>
+    <div class="special-container">
+        <h2>Total Sponsorship Amount</h2>
+        <p class="special-stat">{{ total_sponsor_amount }}</p>
+    </div>
+    
    
 
 
