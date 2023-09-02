@@ -27,7 +27,7 @@
             <p>Venue Data</p>
         </div>
         <div class="icon-container" id="training-icon">
-            <i class="fas fa-running"></i>
+            <i class="fas fa-running" id="running-icon"></i>
             <p>Training Data</p>
         </div>
         <div class="icon-container" id="dashboard-icon">
