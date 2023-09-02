@@ -16,6 +16,7 @@ def drop_tables(cursor):
             DROP TABLE IF EXISTS Teams;
             DROP TABLE IF EXISTS Trainings;
             DROP TABLE IF EXISTS Venues;
+            DROP TABLE IF EXISTS Sponsors;
             """
     # Use executescript as there are multiple queries in the same string
     cursor.executescript(query)
@@ -84,6 +85,18 @@ def create_venues_table(cursor):
         entrance_fee BOOLEAN NOT NULL
         )"""
     cursor.execute(query)
+
+
+def create_sponsors_table(cursor):
+    print("Create Sponsors Table")
+    query = """CREATE TABLE Sponsors (
+        sponsor_id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        email TEXT,
+        contribution_amount REAL
+        )"""
+    cursor.execute(query) 
+
 ####Creat DB####
 def create_db(database_name):
     try:
@@ -97,6 +110,7 @@ def create_db(database_name):
         create_teams_table(cursor)
         create_trainings_table(cursor)
         create_venues_table(cursor)
+        create_sponsors_table(cursor)
 
         # Commit changes to the database and close connection
         connection.commit()
